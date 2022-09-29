@@ -1,4 +1,3 @@
-import java.util.*;
 
 public class Assignment2 {
     
@@ -57,6 +56,49 @@ public class Assignment2 {
         return repeatWord;
     }
 
+    //returns a string that is a combination of a first and last name.
+    private static String getFullName(String firstName, String lastName) {
+        return firstName + " " + lastName;
+    }
+
+    //returns true if sum of elements of array is greater than 100.
+    private static boolean isArrGreater100(int[] arr) {
+        int sum = 0;
+        for(int n : arr) {
+            sum += n;
+        }
+        return sum > 100;
+    }
+
+    //returns the average of given array
+    private static double getAverage(double[] arr) {
+        double sum = 0.;
+        for(double n : arr) {
+            sum += n;
+        }
+        return sum / arr.length;
+    }
+
+    //returns true if average of first of array is larger than second
+    private static boolean isFirstAverageGreater(double[] arr1, double[] arr2) {
+        return getAverage(arr1) > getAverage(arr2);
+    }
+
+    //returns true if isHotOutside, and moneyInPocket is bigger than $10.50
+    private static boolean willBuyDrink(boolean isHotOutside, double moneyInPocket) {
+        return (isHotOutside && moneyInPocket > 10.50);
+    }
+
+    //neatly prints out an array of strings
+    private static void printArray(String[] array) {
+        String result = "{";
+        for(String el : array) {
+            result += "\"" + el + "\", ";//add each element to final result, put quotes around it, and add a comma and space.
+        }
+        result = result.substring(0, result.length() - 2) + "}"; //remove extra ", " and add closing "}"
+        System.out.println(result);
+    }
+
     public static void main(String[] args) {
         int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
         showAverageAge(ages);
@@ -69,5 +111,17 @@ public class Assignment2 {
         sumOfNames(names);
 
         System.out.println(repeatWord("Hello", 3));
+
+        System.out.println(getFullName("Neil", "Armstrong"));
+
+        System.out.println("The sum of elements in array is greater than 100 = " + isArrGreater100( new int[]{17, 27, 28, 29}));
+
+        System.out.println("The average of elements in array is " + getAverage(new double[]{12.5, 13.5, 14.5}));
+
+        System.out.println("First array average is greater than second = " + isFirstAverageGreater(new double[]{12.5, 13.5, 14.5}, new double[]{12.5, 15.5, 14.5}));
+
+        System.out.println("I am going to buy a drink: " + willBuyDrink(true, 10.5000000001));
+
+        printArray(names);
     }
 }
