@@ -2,7 +2,7 @@ import java.util.*;
 
 public class Assignment2 {
     
-
+    //shows the average of a set of ages
     private static void showAverageAge(int[] ages) {
         double average = 0.;
         int ageDiff;
@@ -18,6 +18,7 @@ public class Assignment2 {
         }
     }
 
+    //print the average length of a set of names
     private static void messingWithNames(String[] names) {
         if(names.length > 0) { //checks to see if given empty array
             double average = 0.;
@@ -34,6 +35,7 @@ public class Assignment2 {
         }
     }
 
+    //prints the sum of the length of a set of names
     private static void sumOfNames(String[] names) {
         int[] nameLengths = new int[names.length];
         for(int i = 0; i < names.length; i++) {
@@ -46,6 +48,15 @@ public class Assignment2 {
         System.out.println("This is the sum of the length of all the names: " + sum);
     }
 
+    //returns a string of a given word repeated n times
+    private static String repeatWord(String word, int n) {
+        String repeatWord = "";
+        for(int i = 0; i < n; i++) {
+            repeatWord += word;
+        }
+        return repeatWord;
+    }
+
     public static void main(String[] args) {
         int[] ages = {3, 9, 23, 64, 2, 8, 28, 93};
         showAverageAge(ages);
@@ -56,5 +67,7 @@ public class Assignment2 {
         String[] names = {"Sam", "Tommy", "Tim", "Sally", "Buck", "Bob"};
         messingWithNames(names);
         sumOfNames(names);
+
+        System.out.println(repeatWord("Hello", 3));
     }
 }
